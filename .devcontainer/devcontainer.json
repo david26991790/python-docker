@@ -6,16 +6,16 @@
 	"image": "mcr.microsoft.com/devcontainers/python:1-3.10-bullseye",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/gh-cli:1": {}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [8000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "pip3 install --user -r /workspaces/python-docker/.devcontainer/requirements.txt && pip install --upgrade pip"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
